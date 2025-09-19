@@ -8,6 +8,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.Column;
 import lombok.Data;
 
 @Data
@@ -18,6 +19,8 @@ public class UserModel {
     @GeneratedValue(generator = "UUID")
     private UUID id;
     
+
+    @Column(unique = true)
     private String username;
     private String name;
     private String password;
